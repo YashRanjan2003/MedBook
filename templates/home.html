@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - MedBook</title>
+    <style>
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .video-container {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; /* Set a lower z-index to place it behind the form */
+        }
+                    *{padding:0;margin:0;}
+
+            body{
+                font-family:Verdana, Geneva, sans-serif;
+                font-size:18px;
+                background-color:#CCC;
+            }
+
+                    .float {
+                position: fixed;
+                width: 160px;
+                height: 60px;
+                top: 10px; /* Adjust the top value as needed */
+                left: 40px; /* Adjust the left value as needed */
+                background-image: url('https://media.discordapp.net/attachments/1162146676375556201/1164266249967116489/medbooklogohaibhai.jpg?ex=65429671&is=65302171&hm=8c4b7f06c2aba4ca907c079762bc605da9a423d1104c865a80aaf9c10978eb0a&=&width=320&height=160');
+                display: cover;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                box-shadow: none;
+                cursor: pointer;
+            }
+
+            .my-float {
+                margin-top: 22px;
+            }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #00aaff;
+            color: #fff;
+            padding: 10px 10px;
+            text-align: right;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 60px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logout-button {
+            float: right;
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin-top: 100px;
+            margin-left: 800px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 80px;
+            font-size: 18px;
+            text-align: center;
+            margin: 10px;
+            background-color: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .button2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 160px;
+            height: 40px;
+            font-size: 18px;
+            text-align: center;
+            margin: 10px;
+            background-color: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0091cc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-container">
+        <video autoplay muted loop id="myVideo">
+            <source src="https://media.discordapp.net/attachments/1162146676375556201/1164283939834310746/yechotawala.mp4?ex=6542a6ea&is=653031ea&hm=74f966529616f72b51fcd5226082e634a4c411d90f69424da66825f6ea723d8a&" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+    <div class="header">
+        <div class="logo">MedBook</div>
+        <button class="logout-button" style="float: right; background-color: transparent; border: none; color: #fff; font-size: 16px; cursor: pointer;"><a href="/logout" class="button2">Logout</a></button>
+    </div>
+    <div class="login-container">
+        <h1>Welcome, {{ username }}!</h1>
+        <div class="button-container">
+            <a href="/medical_folder" class="button">Medical Folder</a>
+            <a href="/doctors" class="button">Book Appointments</a>
+            <a href="/profile" class="button">Profile</a>
+        </div>
+    </div>
+    <a href="/home" class="float">
+        <i class="fa fa-plus my-float"></i>
+        </a>
+</body>
+
+</html>

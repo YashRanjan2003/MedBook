@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Profile</title>
+    <style>
+                    *{padding:0;margin:0;}
+
+            body{
+                font-family:Verdana, Geneva, sans-serif;
+                font-size:18px;
+                background-color:#CCC;
+            }
+
+                    .float {
+                position: fixed;
+                width: 160px;
+                height: 60px;
+                top: 10px; /* Adjust the top value as needed */
+                left: 40px; /* Adjust the left value as needed */
+                background-image: url('https://media.discordapp.net/attachments/1162146676375556201/1164266249967116489/medbooklogohaibhai.jpg?ex=65429671&is=65302171&hm=8c4b7f06c2aba4ca907c079762bc605da9a423d1104c865a80aaf9c10978eb0a&=&width=320&height=160');
+                display: cover;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                box-shadow: none;
+                cursor: pointer;
+            }
+
+            .my-float {
+                margin-top: 22px;
+            }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #00aaff;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .profile {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #00aaff;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Patient Profile</h1>
+    <div class="profile">
+        <h2>Name: {{ patient.name }}</h2>
+        <p>Date of Birth: {{ patient.dob }}</p>
+        <p>Address: {{ patient.address }}</p>
+        <p>Contact: {{ patient.contact }}</p>
+        <p>Medical History: {{ patient.medical_history }}</p>
+    </div>
+    <a href="/home" class="float">
+        <i class="fa fa-plus my-float"></i>
+        </a>
+</body>
+</html>

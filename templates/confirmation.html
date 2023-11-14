@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .confirmation {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666666;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation">
+        <h1>Booking Confirmation</h1>
+        <p>Your booking with {{ doctor_name }} has been confirmed.</p>
+        <p>Date: {{ date }}</p>
+        <p>Time: {{ time }}</p>
+        <p>Thank you for choosing our service!</p>
+        <div id="countdown" style="text-align: center; font-size: 24px; margin-top: 20px;"></div>
+    </div>
+    
+
+    <script>
+        // Function to redirect to the home page
+        function redirectToHome() {
+            window.location.href = '/home';
+        }
+
+        // Countdown timer function
+        function countdownTimer() {
+            const countdownElement = document.getElementById('countdown');
+            let seconds = 5;
+
+            const timer = setInterval(function () {
+                countdownElement.textContent = `Redirecting in ${seconds} seconds...`;
+                seconds--;
+
+                if (seconds < 0) {
+                    clearInterval(timer);
+                    redirectToHome(); // Redirect after countdown
+                }
+            }, 1000);
+        }
+
+        // Call the countdown timer function when the page loads
+        countdownTimer();
+    </script>
+</body>
+</html>
